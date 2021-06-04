@@ -1,4 +1,4 @@
-//botão para adicionar tarefas
+//botão para adicionar medições
 const buttonAddTask = document.querySelector('#buttonAdd');
 //aonde eu irei escrever para capturar o value
 const inputTask = document.querySelector('#taskInput');
@@ -17,12 +17,12 @@ const buttonCheckAll = document.querySelector('#buttonCheckAll');
 
 
 
-//evento de clique para adicionar tarefas
+//evento de clique para adicionar medições
 //funcionalidades:
 //mensagem de erro
 //limpa o value do input
-//limpa o erro quando a tarefa é adicionada corretamente
-//cria o botão de deletar tarefa
+//limpa o erro quando a medição é adicionada corretamente
+//cria o botão de deletar medição
 //cria uma checkbox vazia
 buttonAddTask.addEventListener('click', function () {
 
@@ -40,7 +40,7 @@ buttonAddTask.addEventListener('click', function () {
     }
 });
 
-//função para deletar uma tarefa
+//função para deletar uma medição
 function deleteLiItem(li) {
     li.parentNode.remove()
 
