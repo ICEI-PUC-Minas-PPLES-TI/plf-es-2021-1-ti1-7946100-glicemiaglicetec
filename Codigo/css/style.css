@@ -97,6 +97,7 @@ ul > a {
     list-style-type: none;
     color: white !important;
     font-size: 1.2rem;
+    text-decoration: none;
 }
 
 .fa-user-circle {
@@ -181,6 +182,14 @@ ul > a {
 
 .card-body > a {
     color: black !important;
+}
+
+.input-datetime {
+    display: ; 
+}
+
+#datetime {
+
 }
 
 footer {

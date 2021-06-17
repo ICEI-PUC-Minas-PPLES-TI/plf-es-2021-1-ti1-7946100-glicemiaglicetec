@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -68,8 +68,8 @@
                 <h5 id="name-label">Adicione abaixo sua glicemia</h5>
             </div>
             <div class="content">
-                <input type="text" required placeholder="Coloque sua glicemia (dl/mg)" id="taskInput" class="task-input"
-                    action="/add-task">
+                <input type="text" required placeholder="         (dl/mg)" id="taskInput" class="task-input" action="/add-task">
+                <input type="datetime-local" required name="datetime" id="datetime" class="datetime-input">
                 <p class="error"></p>
                 <button class="btn_acessar" id="buttonAdd" type="submit">Adicionar</button>
                 <ul class="task-list" id="taskList"></ul>
