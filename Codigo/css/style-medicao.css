@@ -141,7 +141,7 @@
 .the-two-buttons {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 @media (min-width: 425px) {
