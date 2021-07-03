@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,54 +13,55 @@
     <link rel="stylesheet" href="./css/style-medicao.css">
     <title>Glicetec</title>
 </head>
-<body>
+
+<body onload="show()">
     <header>
         <div class="collapse" id="navbarToggleExternalContent">
             <div class="bg-navbar p-4">
-              <div class="header-navbar">
-                  <i class="fas fa-user-md logo-navbar"></i>
-                  <h2 class="text-white">Glicetec</h2>
-              </div>
-              <hr>
-              <ul>
-                  <a href="perfil.html">
-                      <li>Perfil</li>
-                  </a>
-                  <a href="medicoes.html">
-                      <li>Medições</li>
-                  </a>
-                  <a href="calendario.html">
-                      <li>Calendário</li>
-                  </a>
-                  <a href="news.html">
-                      <li>Links úteis</li>
-                  </a>
-                  <a href="notificacoes.html">
-                      <li>Notificações</li> 
-                  </a>
-              </ul>
-              <hr>
-              <ul>
-                  <a href="configuracoes.html">
-                      <li>Configurações</li>
-                  </a>
-                  <a href="avalie.html">
-                      <li>Avalie a gente</li>
-                  </a>
-              </ul>
+                <div class="header-navbar">
+                    <i class="fas fa-user-md logo-navbar"></i>
+                    <h2 class="text-white">Glicetec</h2>
+                </div>
+                <hr>
+                <ul>
+                    <a href="perfil.html">
+                        <li>Perfil</li>
+                    </a>
+                    <a href="medicoes.html">
+                        <li>Medições</li>
+                    </a>
+                    <a href="calendario.html">
+                        <li>Calendário</li>
+                    </a>
+                    <a href="news.html">
+                        <li>Links úteis</li>
+                    </a>
+                    <a href="notificacoes.html">
+                        <li>Notificações</li>
+                    </a>
+                </ul>
+                <hr>
+                <ul>
+                    <a href="configuracoes.html">
+                        <li>Configurações</li>
+                    </a>
+                    <a href="avalie.html">
+                        <li>Avalie a gente</li>
+                    </a>
+                </ul>
             </div>
-          </div>
-          <nav class="navbar navbar-dark bg-navbar">
-            <div class="container-fluid">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        </div>
+        <nav class="navbar navbar-dark bg-navbar">
+            <div class="container-fluid" id="tela">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-              <div class="user">
-                  <p class="user-name">Olá, João Pedro</p>
-                  <i class="fas fa-user-circle"></i>
-              </div>
+                <div class="user">
+                    <p class="user-name">Olá</p>
+                    <i class="fas fa-user-circle"></i>
+                </div>
             </div>
-          </nav>
+        </nav>
     </header>
 
     <section class="medicao">
@@ -80,8 +82,9 @@
             </div>
         </div>
     </section>
-    
+
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
+
 </html>

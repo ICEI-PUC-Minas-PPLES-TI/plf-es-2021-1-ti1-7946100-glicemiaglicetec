@@ -1,3 +1,4 @@
+let xhr;
 $(function() {
     var operação = "A";
     var indice_selecionado = -1;
@@ -42,4 +43,16 @@ function validate() {
         alert(Senha_incorreta)
     else
         return "#btnEntrar";
+}
+
+function show() {
+
+    let data = JSON.parse(xhr.responseText);
+    let textoHTML = '';
+    if ($("#name").val() != 0) {
+        textoHTML += '<div class="user"><p class = "user-name" >Olá, ${usuario} < /p> <i class = "fas fa-user-circle" > < /i> < /div > '
+    } else {
+        textoHTML += '<div class="user"> <p class = "user-name" > Olá, user< /p> <i class = "fas fa-user-circle" > < /i> < /div > '
+    }
+    document.getElementById('tela').innerHTML = textoHTML;
 }
