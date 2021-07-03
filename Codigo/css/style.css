@@ -54,10 +54,9 @@ hr {
     margin: 1rem 0;
 }
 
-.first-column{
+.first-column {
     text-align: center;
     padding-top: 2rem;
-
 }
 
 .card--group {
@@ -65,12 +64,12 @@ hr {
     padding: 1rem 2rem 0;
 }
 
-.login{
+.login {
     display: flex;
     padding: 0 2rem;
 }
 
-.social-media > a {
+.social-media>a {
     text-decoration: none;
     color: rgb(0, 157, 255);
     font-size: 2rem;
@@ -97,8 +96,8 @@ hr {
     background-color: rgb(0, 157, 255);
 }
 
-.bg-navbar > ul,
-ul > a {
+.bg-navbar>ul,
+ul>a {
     list-style-type: none;
     color: white !important;
     font-size: 1.2rem;
@@ -113,7 +112,7 @@ ul > a {
 
 .user {
     display: flex;
- }
+}
 
 .user-name {
     color: white;
@@ -185,12 +184,12 @@ ul > a {
     background-color: #87cefa;
 }
 
-.card-body > a {
+.card-body>a {
     color: black !important;
 }
 
 .input-datetime {
-    display: ; 
+    display: block;
 }
 
 footer {
