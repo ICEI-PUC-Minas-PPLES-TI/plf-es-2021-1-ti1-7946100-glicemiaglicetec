@@ -1,7 +1,9 @@
 //botão para adicionar medições
 const buttonAddTask = document.querySelector('#buttonAdd');
-//aonde eu irei escrever para capturar o value
+//valor da glicemia
 const inputTask = document.querySelector('#taskInput');
+// valor da data e hora
+const inputDatetime = document.querySelector('#datetime');
 //id da ul 
 const taskList = document.querySelector('#taskList');
 //botão de deletar uma li
@@ -26,17 +28,18 @@ const buttonCheckAll = document.querySelector('#buttonCheckAll');
 //cria uma checkbox vazia
 buttonAddTask.addEventListener('click', function () {
 
-    if (inputTask.value.length > 0) {
+    if (inputTask.value.length > 0 && inputDatetime.value.length > 0) {
         taskList.innerHTML += `
         <li class="list-item">
             <input type="checkbox" name="checkThis" class="checkbox">
-            <p class="list-text">${inputTask.value}</p>
+            <p class="list-text">${inputTask.value}dl/mg - ${inputDatetime.value}</p>
             <i class="fas fa-trash delete-task" id="deleteTask" onclick="deleteLiItem(this)"></i>
         </li>`
         inputTask.value = "";
+        inputDatetime.value = "";
         errorMessage.innerHTML = "";
     } else {
-        return errorMessage.innerHTML = 'Por favor, coloque o valor da sua glicemia';
+        return errorMessage.innerHTML = 'Por favor, coloque o valor da sua glicemia (dl/mg) e/ou a data e hora da medição.';
     }
 });
 

@@ -17,6 +17,11 @@ hr {
     height: 2.5rem;
 }
 
+.input-tipo {
+    width: 103%;
+    height: 2.5rem;
+}
+
 .logo {
     color: #87cefa;
     font-size: 8rem;
@@ -97,6 +102,7 @@ ul > a {
     list-style-type: none;
     color: white !important;
     font-size: 1.2rem;
+    text-decoration: none;
 }
 
 .fa-user-circle {
@@ -181,6 +187,10 @@ ul > a {
 
 .card-body > a {
     color: black !important;
+}
+
+.input-datetime {
+    display: ; 
 }
 
 footer {
