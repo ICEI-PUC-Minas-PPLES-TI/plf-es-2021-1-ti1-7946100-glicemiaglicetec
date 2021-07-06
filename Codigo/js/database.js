@@ -64,7 +64,6 @@ function validate() {
 
 function show() {
 
-    Updated upstream
     let data = JSON.parse(xhr.responseText);
     let textoHTML = '';
     if ($("#name").val() != 0) {
