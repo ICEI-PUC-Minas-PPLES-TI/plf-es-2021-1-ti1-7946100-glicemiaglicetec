@@ -3,15 +3,66 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Glicetec</title>
-    <link href="assets/css/bootstrap.css" type="text/css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-    <script src="assets/js/bootstrap.js" type="text/javascript"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/0924d110a0.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Perfil</title>
 </head>
 
 <body>
+    <header>
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-navbar p-4">
+                <div class="header-navbar">
+                    <i class="fas fa-user-md logo-navbar"></i>
+                    <h2 class="text-white">Glicetec</h2>
+                </div>
+                <hr>
+                <ul>
+                    <a href="perfil.html">
+                        <li>Perfil</li>
+                    </a>
+                    <a href="main.html">
+                        <li>Medições</li>
+                    </a>
+                    <a href="calendario.html">
+                        <li>Calendário</li>
+                    </a>
+                    <a href="news.html">
+                        <li>Links úteis</li>
+                    </a>
+                    <a href="notificacoes.html">
+                        <li>Notificações</li>
+                    </a>
+                </ul>
+                <hr>
+                <ul>
+                    <a href="configuracoes.html">
+                        <li>Configurações</li>
+                    </a>
+                    <a href="avalie.html">
+                        <li>Avalie a gente</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-navbar">
+            <div class="container-fluid" id="tela">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="user">
+                    <p class="user-name">Olá</p>
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
 
     <div id="perfil" class="container">
         <div class="row">
@@ -198,6 +249,8 @@
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 
 </html>

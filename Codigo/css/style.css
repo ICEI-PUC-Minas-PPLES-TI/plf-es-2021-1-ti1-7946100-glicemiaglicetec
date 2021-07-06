@@ -135,6 +135,13 @@ ul>a {
     font-weight: bold;
 }
 
+.title-receitas {
+    text-align: center;
+    padding: 2rem 0 1rem;
+    font-weight: bold;
+    color: black;
+}
+
 .img-receita {
     max-width: 100%;
     max-height: auto;

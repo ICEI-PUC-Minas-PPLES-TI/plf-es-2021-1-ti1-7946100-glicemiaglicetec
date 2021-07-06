@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,65 +9,64 @@
     <script src="https://kit.fontawesome.com/0924d110a0.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./js/database.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/style1.css">
-    <link rel="stylesheet" href="./css/style2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Links úteis</title>
 </head>
 
 <body>
-    <section>
-        <header>
-            <div class="collapse" id="navbarToggleExternalContent">
-                <div class="bg-navbar p-4">
-                  <div class="header-navbar">
-                      <i class="fas fa-user-md logo-navbar"></i>
-                      <h2 class="text-white">Glicetec</h2>
-                  </div>
-                  <hr>
-                  <ul>
-                      <a href="perfil.html">
-                          <li>Perfil</li>
-                      </a>
-                      <a href="medicoes.html">
-                          <li>Medições</li>
-                      </a>
-                      <a href="calendario.html">
-                          <li>Calendário</li>
-                      </a>
-                      <a href="news.html">
-                          <li>Links úteis</li>
-                      </a>
-                      <a href="notificacoes.html">
-                          <li>Notificações</li> 
-                      </a>
-                  </ul>
-                  <hr>
-                  <ul>
-                      <a href="configuracoes.html">
-                          <li>Configurações</li>
-                      </a>
-                      <a href="avalie.html">
-                          <li>Avalie a gente</li>
-                      </a>
-                  </ul>
+    <header>
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-navbar p-4">
+                <div class="header-navbar">
+                    <i class="fas fa-user-md logo-navbar"></i>
+                    <h2 class="text-white">Glicetec</h2>
                 </div>
-              </div>
-              <nav class="navbar navbar-dark bg-navbar">
-                <div class="container-fluid">
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="user">
-                      <p class="user-name">Olá, João Pedro</p>
-                      <i class="fas fa-user-circle"></i>
-                  </div>
+                <hr>
+                <ul>
+                    <a href="perfil.html">
+                        <li>Perfil</li>
+                    </a>
+                    <a href="main.html">
+                        <li>Medições</li>
+                    </a>
+                    <a href="calendario.html">
+                        <li>Calendário</li>
+                    </a>
+                    <a href="news.html">
+                        <li>Links úteis</li>
+                    </a>
+                    <a href="notificacoes.html">
+                        <li>Notificações</li>
+                    </a>
+                </ul>
+                <hr>
+                <ul>
+                    <a href="configuracoes.html">
+                        <li>Configurações</li>
+                    </a>
+                    <a href="avalie.html">
+                        <li>Avalie a gente</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-navbar">
+            <div class="container-fluid" id="tela">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="user">
+                    <p class="user-name">Olá</p>
+                    <i class="fas fa-user-circle"></i>
                 </div>
-              </nav>
-        </header>
-    </section>
+            </div>
+        </nav>
+    </header>
+
     <section>
         <article id="Receitas">
-            <h3 class="title"><a href="https://www.diabetes.org.br/publico/receitas">Receitas</a></h3>
+            <h3 class="title-receitas">Receitas</h3>
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -115,7 +114,7 @@
     </section>
     <section>
         <nav id="exercicios">
-            <h3 class="title">Exercícios</h3>
+            <h3 class="title-receitas">Exercícios</h3>
             <div class="card-group">
                 <div class="card-exercicios">
                     <iframe class="video-exercicio" src="https://www.youtube.com/embed/7BlTZTaiMEA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -211,6 +210,7 @@
         </footer>
     </section>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
  </body>
 
 </html>
