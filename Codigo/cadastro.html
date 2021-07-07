@@ -13,45 +13,46 @@
 </head>
 
 <body>
-    <div class="first-column">
-        <h2>Bem vindo!</h2>
-    </div>
-
-    <form class="form ">
-        <div class="card-group">
-            <h3 class=" Title ">Cadastre-se</h3>
+    <section class="cadastro">
+        <div class="first-column">
+            <h2>Bem vindo!</h2>
         </div>
-        <div class="card-group">
-            <input class="input-login" type="text" placeholder="Nome" required>
+        <form class="form ">
+            <div class="card-group">
+                <h3 class=" Title ">Cadastre-se</h3>
+            </div>
+            <div class="card-group">
+                <input class="input-login" type="text" placeholder="Nome" id="txtNome" required>
+            </div>
+            <div class="card-group">
+                <input class="input-login" type="email" placeholder="Email" id="txtEmail" required>
+            </div>
+            <div class="card-group">
+                <input class="input-login" type="password" placeholder="Senha" id="txtSenha" required>
+            </div>
+            <div class="card-group">
+                <input class="input-login" type="text " placeholder="Tipo de Diabetes" id="txtTipoDiabetes" required>
+            </div>
+            <div class="card-group">
+                <input class="input-login" type="text" placeholder="Frequência de medições" id="txtMedicoes" required>
+            </div>
+            <div class="card-group ">
+                <input class="input-login" type="date" placeholder="Data de nascimento" id="txtDataNasc" required>
+            </div>
+            <div class="card--group"><label><input type="checkbox">Manter conectado</label></div>
+            <div class="card-group button">
+                <a href="main.html"><button onclick="Adicionar()" class="btn_acessar ">Pronto</button></a>
+            </div>
+            <div class="login ">
+                <p>Para usuários antigos:</p>
+                <a href="login.html">
+                    <button class="btn-login">Login</button>
+                </a>
+            </div>
+        </form>
         </div>
-        <div class="card-group">
-            <input class="input-login" type="email" placeholder="Email " required>
         </div>
-        <div class="card-group">
-            <input class="input-login" type="password" placeholder="Senha" required>
-        </div>
-        <div class="card-group">
-            <input class="input-login" type="text " placeholder="Tipo de Diabetes" required>
-        </div>
-        <div class="card-group">
-            <input class="input-login" type="text" placeholder="Frequência de medições" required>
-        </div>
-        <div class="card-group ">
-            <input class="input-login" type="date" placeholder="Data de nascimento" required>
-        </div>
-        <div class="card--group"><label><input type="checkbox">Manter conectado</label></div>
-        <div class="card-group button">
-            <a href="main.html"><button onclick="Add() " class="btn_acessar ">Pronto</button></a>
-        </div>
-        <div class="login ">
-            <p>Para usuários antigos:</p>
-            <a href="login.html ">
-                <button class="btn-login ">Login</button>
-            </a>
-        </div>
-    </form>
-    </div>
-    </div>
+    </section>
 </body>
 
 </html>

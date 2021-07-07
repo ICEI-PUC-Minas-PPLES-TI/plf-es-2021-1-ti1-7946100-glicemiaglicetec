@@ -214,21 +214,58 @@ ul > a {
 footer {
     padding: 0.8rem 0.5rem;
     background-color: rgb(0, 157, 255);
-    margin-top: 2rem;
+    margin-top: 5rem;
     color: white;
+    font-size: 0.8rem;
+}
+
+@media screen and (min-width: 425px) {
+    .carousel-item {
+        height: 350px;
+    }
+    .delete-all,
+    .button-check-all {
+        padding: 0.6rem 1rem !important;
+    }
+    .the-two-buttons {
+        margin-top: 3rem;
+    }
+    .medicao {
+        margin: 0 1.5rem;
+    }
 }
 
 @media screen and (min-width:768px) {
+    .cadastro {
+        margin: 0 5rem;
+    }
     .img-receita {
         min-width: 100%;
         max-height: auto;
     }
     .carousel-item {
-        height: 530px;
+        height: 450px;
         min-width: fit-content;
     }
-    .card-group {
+    .card-video {
         padding-bottom: 2rem;
+    }
+    .carrossel {
+        margin: 0 2rem;
+    }
+    .noticias {
+        margin: 0 3rem;
+    }  
+    #noticias {
+        margin: 0 2rem;
+    }
+    .delete-all,
+    .button-check-all {
+        padding: 0.6rem 1rem !important;
+        font-size: 2rem;
+    }
+    .medicao {
+        margin: 0 4rem;
     }
 }
 
@@ -238,9 +275,42 @@ footer {
         height: auto;
     }
     .carousel-item {
-        height: 630px;
+        height: 450px;
     }
-    section {
-        margin: 0 3rem;
-    }    
+    .noticias {
+        margin: 0 10rem;
+    }  
+    #noticias {
+        margin: 0 2rem;
+    }
+    .cadastro {
+        margin: 0 10rem;
+    }  
+    .text-mais {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width:1440px) { 
+    .cadastro {
+        margin: 0 20rem;
+    }
+    .noticias {
+        margin: 0 23rem;
+    }
+    #noticias {
+        margin: 0 12rem;
+    }
+    .carousel-item {
+        height: 450px;
+    }
+    .card-video {
+        margin: 0 10rem;
+    }
+    .conteudo-header {
+        padding: 0 12rem;
+    }
+    .text-footer {
+        padding: 0 10rem;
+    }
 }

@@ -7,17 +7,17 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/0924d110a0.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./js/database.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="./js/database.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <title>Links úteis</title>
 </head>
 
-<body>
+<body onload="show()">
     <header>
         <div class="collapse" id="navbarToggleExternalContent">
-            <div class="bg-navbar p-4">
+            <div class="conteudo-header bg-navbar p-4">
                 <div class="header-navbar">
                     <i class="fas fa-user-md logo-navbar"></i>
                     <h2 class="text-white">Glicetec</h2>
@@ -64,8 +64,8 @@
         </nav>
     </header>
 
-    <section>
-        <article id="Receitas">
+    <section class="noticias">
+        <article class="carrossel" id="Receitas">
             <h4 class="title-receitas">Receitas indicadas para diabéticos</h4>
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
@@ -123,7 +123,7 @@
     <section>
         <nav id="exercicios">
             <h4 class="title-receitas">Exercícios</h4>
-            <div class="card-group">
+            <div class="card-group card-video">
                 <div class="card card-exercicios">
                     <iframe class="video-exercicio" src="https://www.youtube.com/embed/7BlTZTaiMEA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <div class="card-body">
@@ -216,7 +216,7 @@
     </section>
 
     <footer>
-        <p>Copyright Glicetec - Todos os direitos reservados</p>
+        <p class="text-footer">Copyright Glicetec - Todos os direitos reservados</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
