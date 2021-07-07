@@ -47,7 +47,6 @@ hr {
     height: 2.5rem;
     background-color: rgb(0, 157, 255);
     color: white;
-    font-weight: lighter;
     font-size: 20px;
     border: 0;
     border-radius: 5px;
@@ -56,6 +55,10 @@ hr {
 
 .btn_acessar:hover {
     background-image: linear-gradient( to right, #0184a5, #35dcd4);
+}
+
+.btn-add-glicemia {
+    margin-top: 0.5rem !important;
 }
 
 .first-column {

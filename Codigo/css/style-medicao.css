@@ -112,7 +112,6 @@
     color: black;
     margin-top: 15px;
     cursor: pointer;
-    font-weight: lighter;
     font-size: 1rem !important;
 }
 
@@ -128,7 +127,6 @@
     border-radius: 5px;
     padding: 10px;
     color: black;
-    font-weight: lighter;
     margin-top: 15PX;
     cursor: pointer;
     margin-right: 1rem;
@@ -149,7 +147,6 @@
 
     .button-check-all,
     .delete-all {
-
         padding: 5px;
         font-size: 0.8rem;
     }
