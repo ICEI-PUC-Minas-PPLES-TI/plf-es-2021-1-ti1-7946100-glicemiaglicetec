@@ -39,7 +39,7 @@ function editUser() {
 }
 
 function login(email, senha) {
-    if (typeof email == 'string' && typeof senha == 'string' && email.length > 0 && senha.length > 0) {
+    if (typeof email == 'string' && typeof password == 'string' && email.length > 0 && senha.length > 0) {
         var loggeduser;
         var user = users[index];
         if (email === user.email && senha === user.senha)
