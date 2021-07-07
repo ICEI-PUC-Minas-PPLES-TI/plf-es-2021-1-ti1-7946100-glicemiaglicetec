@@ -46,7 +46,7 @@ function initLoginApp() {
     var usuariosJSON = localStorage.getItem('db_usuarios');
 
     if (!usuariosJSON) {
-        alert('Dados de usuários não encontradosg');
+        alert('Dados de usuários não encontrados');
         db_usuarios = dadosIniciais;
 
         localStorage.setItem('db_usuarios', JSON.stringify(dadosIniciais));
