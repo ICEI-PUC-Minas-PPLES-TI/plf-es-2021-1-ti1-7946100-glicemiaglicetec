@@ -10,42 +10,50 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Codigo/css/style.css">
-    <script type="text/javascript" src="./Codigo/js/database.js"></script>
     <title>Login</title>
 </head>
 
 <body>
-
-    <form id="Cadastro" class="form" ction=" ">
-        <div class="card">
-            <div class="card-top">
-                <h1><strong>GLICETEC</strong></h1>
-                <i class="fas fa-user-md logo"></i>
-                <h2>Seu assistente médico pessoal</h2>
-            </div>
-            <div class="card-group">
-                <input class="input-login" type="email" name="Usuario" placeholder="E-mail" required>
-            </div>
-            <div class="card-group">
-                <input class="input-login" type="password" name="Senha" placeholder="Senha" required>
-            </div>
-            <div class="card-group link-checkbox">
-                <a class="esqueci" href="esqueci.html">
-                    <p>Esqueci a senha</p>
-                </a>
-                <label> <input type="checkbox" name="lembrar">Manter conectado</label>
-            </div>
-            <div class="card-group button">
-                <a href="./Codigo/main.html"><button onclick="validate()" class="btn_acessar" type="submit" >Acessar</button></a>
-            </div>
-            <div class="card-group button">
-                <label>Novo usuário: </label>
-                <a href="./Codigo/cadastro.html"><button type="button">Cadastre-se</button>
-                </a>
+    <div id="login">
+        <h3 class="text-center text-white pt-5">Novo Usuário</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form id="login-form" class="form" method="post" onsubmit="loginUser(this)">
+                            <h3 class="text-center text-info">Login</h3>
+                            <div class="form-group">
+                                <label for="username" class="text-info">Usuário</label><br>
+                                <input type="text" name="username" id="username" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="text-info">Senha</label><br>
+                                <input type="text" name="password" id="password" class="form-control">
+                            </div>
+                            <div class="form-group text-right">
+                                <input onclick="" type="submit" name="login" class="btn btn-info btn-md" value="submit">
+                            </div>
+                        </form>
+                    </div>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#loginModal">Novo usuario</button>
+                </div>
             </div>
         </div>
-    </form>
+    </div>
+    <div class="modal-body">
+        <div id="login-box" class="col-md-12">
+            <form id="login-form" class="form" method="post" onsubmit="loginUser (this)">
+                <a href="Codigo/cadastro.html"><button class="btn_entrar">Cadastre-se</button>
+        </a>
+                <h3 class=" text-center text-info ">Novo usuário</h3>
+            </form>
+        </div>
+    </div>
+    <script src="login.js "></script>
 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
 </body>
 
 </html>

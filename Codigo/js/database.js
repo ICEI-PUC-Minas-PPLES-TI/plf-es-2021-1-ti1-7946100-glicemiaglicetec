@@ -1,260 +1,100 @@
-$(function() {
-    var operação = "A";
-    var indice_selecionado = -1;
-    var tbUsuarios = localStorage.getItem("tbUsuarios");
-    tbUsuarios = JSON.parse(tbUsuarios);
-    if (tbUsuarios = null)
-        tbUsuarios = [];
-});
+// declara um conjunto inicial de contatos
+var db_diabeticos_inicial = {
+    "data": [{
+            "id": 1,
+            "nome": "Venancia Matias",
+            "Tipo_Diabetes": "Tipo 3",
+            "email": "veve@gmail.com",
+            "data_nasciment": "17/04/1942",
+            "senha": "Craqueneto1704"
 
-function add() {
-    var user = JSON.stringify({
-        Nome              : $("#txtNome").val(),
-        Email             : $("#txtEmail").val(),
-        Senha             : $("#txtSenha").val(),
-        TipoDiabetes      : $("#txtTipoDiabetes").val(),
-        FrequenciaMedicoes: $("#txtMedicoes").val(),
-        DataNascimento    : $("#txtDataNasc").val(),
-    });
-    tbUsuarios.push(user);
-    localStorage.setItem("tbUsuarios", JSON.stringify(tbUsuarios));
-    alert("Registro adicionado.");
-    operação = "A";
-    return true;
+        },
+        {
+            "id": 2,
+            "nome": "Peter Parquer",
+            "Tipo_Diabetes": "Tipo 1",
+            "email": "miranha@gmail.com",
+            "data_nasciment": "22/02/1998",
+            "senha": "vaiteia22"
+        },
+        {
+            "id": 3,
+            "nome": "Tony Esterco",
+            "Tipo_Diabetes": "Pré-diabético",
+            "email": "tonyesterco@gmail.com",
+            "data_nasciment": "22/08/02",
+            "senha": "Iamtheironman"
+        },
+        {
+            "id": 4,
+            "nome": "Thor Sonofodin",
+            "Tipo_Diabetes": "Tipo 2",
+            "email": "melhorvingador@gmail.com",
+            "data_nasciment": "04/04/2004",
+            "senha": "Filhinhodepapai"
+
+        },
+        {
+            "id": 5,
+            "nome": "Estevão Rogério",
+            "Tipo_Diabetes": "Tipo 4",
+            "email": "picole@gmail.com",
+            "data_nasciment": "13/05/1972",
+            "senha": "picoleidoso"
+
+        },
+        {
+            "id": 6,
+            "nome": "Doutor Normal",
+            "Tipo_Diabetes": "Tipo 5",
+            "email": "normal@outlook.com",
+            "data_nasciment": "14/07/1983",
+            "senha": "magodasmagias1"
+
+        },
+    ]
 }
 
-function validate() {
-    user.Nome = document.getElementById(usuario);
-    if ($("#txtEmail").val() == 0) {
-        alert(Usuario_inexistente);
-    } else {
-        user.senha = document.getElementById(senha);
-        if ($("#txtSenha").val() == 0) {
-            alert(Senha_incorreta);
-        } else {
-            return "#btnEntrar";
-    }
+var db = JSON.parse(localStorage.getItem('db_diabeticos'));
+if (!db) {
+    db = db_diabeticos_inicial
+};
+
+function displayMessage(msg) {
+    $('#msg').html('<div class="alert alert-warning">' + msg + '</div>');
 }
 
-function editUser() {
-    tbUsuarios[indice_selecionado] = JSON.stringify({
-        Nome              : $("#txtNome").val(),
-        Email             : $("#txtEmail").val(),
-        Senha             : $("#txtSenha").val(),
-        TipoDiabetes      : $("#txtTipoDiabetes").val(),
-        FrequenciaMedicoes: $("#txtMedicoes").val(),
-        DataNascimento    : $("#txtDataNasc").val(),
-    });
-    localStorage.setItem("tbUsuarios", JSON.stringify(tbUsuarios));
-    alert("Informações editadas.")
-    operacao = "A";
-    return true;
+function insertDiabetico(diabetico) {
+    let novoId = db.data[db.data.length - 1].id + 1;
+    let novoDiabetico = {
+        "id": novoId,
+        "nome": diabetico.nome,
+        "Tipo_Diabetes": diabetico.Tipo_Diabetes,
+        "email": diabetico.email,
+        "data_nasciment": diabetico.data_nasciment,
+        "senha": diabetico.senha,
+    };
+
+    db.data.push(novoDiabetico);
+    displayMessage("Cadastro inserido com sucesso");
+    localStorage.setItem('db_contato', JSON.stringify(db));
 }
 
-function validate() {
-    //var userNome = localStorage.getItem("#txtEmail");
-    //for (let i = 0; i <= tbUsuarios.length; i++)
-    if ($("#txtNome").val() == 0)
-        alert(Usuario_inexistente);
-    else
-        var userSenha = document.getElementById(senha);
-    if (val() == 0)
-        alert(Senha_incorreta)
-    else
-        return "#btnEntrar";
+function updateDiabetico(id, diabetico) {
+    let index = db.data.map(obj => obj.id).indexOf(id);
+    db.data[index].nome = diabetico.nome,
+        db.data[index].email = diabetico.email,
+        db.data[index].Tipo_Diabetes = diabetico.Tipo_Diabetes,
+        db.data[index].data_nasciment = diabetico.data_nasciment,
+        db.data[index].senha = diabetico.senha,
+
+        displayMessage("Cadastro alterado com sucesso");
+    localStorage.setItem('db_contato', JSON.stringify(db));
 }
 
-function show() {
+function deleteDiabetico(id) {
+    db.data = db.data.filter(function(element) { return element.id != id });
 
-    let data = JSON.parse(xhr.responseText);
-    let textoHTML = '';
-    if ($("#name").val() != 0) {
-        textoHTML += '<div class="user"><p class="user-name">Olá, ${"txtNome"}</p> <i class="fas fa-user-circle" > < /i> </div > '
-    } else {
-        textoHTML += '<div class="user"> <p class = "user-name" > Olá, user< /p> <i class = "fas fa-user-circle" > < /i> < /div > '
-    }
-    document.getElementById('tela').innerHTML = textoHTML;
-    let data = JSON.parse(xhr.responseText);
-    let textoHTML = '';
-    if ($("#name").val() != 0) {
-        textoHTML += '<div class="user"><p class = "user-name" >Olá, ${usuario} < /p> <i class = "fas fa-user-circle" > < /i> < /div > '
-    } else {
-        textoHTML += '<div class="user"> <p class = "user-name" > Olá, user< /p> <i class = "fas fa-user-circle" > < /i> < /div > '
-    }
-    document.getElementById('tela').innerHTML = textoHTML;
+    displayMessage("Cadastro removido com sucesso");
+    localStorage.setItem('db_diabetico', JSON.stringify(db));
 }
-$("#cadastro").on("submite", function() {
-    if (operação == "A")
-        return Add();
-    else
-        return alert("Cadastro já efetuado, faça login.");
-});
-
-
-
-
-
-
-
-
-$(function(){
-    var operacao = "A"; //"A"=Adição; "E"=Edição
-    var indice_selecionado = -1; //Índice do item selecionado na lista
-    var tbUsuarios = localStorage.getItem("tbUsuarios");// Recupera os dados armazenados
-    tbUsuarios = JSON.parse(tbUsuarios); // Converte string para objeto
-    if(tbUsuarios == null) // Caso não haja conteúdo, iniciamos um vetor vazio
-    tbUsuarios = [];
-});
-
-function Adicionar(){
-    var user = JSON.stringify({
-        Nome              : $("#txtNome").val(),
-        Email             : $("#txtEmail").val(),
-        Senha             : $("#txtSenha").val(),
-        TipoDiabetes      : $("#txtTipoDiabetes").val(),
-        FrequenciaMedicoes: $("#txtMedicoes").val(),
-        DataNascimento    : $("#txtDataNasc").val(),
-    });
-    tbUsuarios.push(user);
-    localStorage.setItem("tbUsuarios", JSON.stringify(tbUsuarios));
-    alert("Registro adicionado.");
-    return true;
-}
-
-function Editar(){
-    tbUsuarios[indice_selecionado] = JSON.stringify({
-            Codigo   : $("#txtCodigo").val(),
-            Nome     : $("#txtNome").val(),
-            Telefone : $("#txtTelefone").val(),
-            Email    : $("#txtEmail").val()
-        });//Altera o item selecionado na tabela
-    localStorage.setItem("tbUsuarios", JSON.stringify(tbUsuarios));
-    alert("Informações editadas.")
-    operacao = "A"; //Volta ao padrão
-    return true;
-}
-
-function Excluir(){
-    tbUsuarios.splice(indice_selecionado, 1);
-    localStorage.setItem("tbUsuarios", JSON.stringify(tbUsuarios));
-    alert("Registro excluído.");
-}
-
-function Listar(){
-    $("#tblListar").html("");
-    $("#tblListar").html(
-        "<thead>"+
-        "   <tr>"+
-        "   <th></th>"+
-        "   <th>Código</th>"+
-        "   <th>Nome</th>"+
-        "   <th>Telefone</th>"+
-        "   <th>Email</th>"+
-        "   </tr>"+
-        "</thead>"+
-        "<tbody>"+
-        "</tbody>"
-        );
-    for(var i in tbUsuarios){
-        var cli = JSON.parse(tbUsuarios[i]);
-        $("#tblListar tbody").append("<tr>");
-        $("#tblListar tbody").append("<td><img src='edit.png' alt='"+i+"'class='btnEditar'/><img src='delete.png' alt='"+i+"'class='btnExcluir'/></td>");
-        $("#tblListar tbody").append("<td>"+cli.Codigo+"</td>");
-        $("#tblListar tbody").append("<td>"+cli.Nome+"</td>");
-        $("#tblListar tbody").append("<td>"+cli.Telefone+"</td>");
-        $("#tblListar tbody").append("<td>"+cli.Email+"</td>");
-        $("#tblListar tbody").append("</tr>");
-    }
-}
-
-$("#frmCadastro").on("submit",function(){
-    if(operacao == "A")
-        return Adicionar();
-    else
-        return Editar();
-});
-
-
-$("#tblListar").on("click", ".btnEditar", function(){
-    operacao = "E";
-    indice_selecionado = parseInt($(this).attr("alt"));
-    var cli = JSON.parse(tbUsuarios[indice_selecionado]);
-    $("#txtCodigo").val(cli.Codigo);
-    $("#txtNome").val(cli.Nome);
-    $("#txtTelefone").val(cli.Telefone);
-    $("#txtEmail").val(cli.Email);
-$("#txtCodigo").attr("readonly","readonly");
-    $("#txtNome").focus();
-});
-
-$("#tblListar").on("click", ".btnExcluir",function(){
-    indice_selecionado = parseInt($(this).attr("alt"));
-    Excluir();
-    Listar();
-});
-
-
-
-
-
-/*
-let xhr;
-$(function() {
-    var operação = "A";
-    var indice_selecionado = -1;
-    var tbUsuarios = localStorage.getItem("tbUsuarios");
-    tbUsuarios = JSON.parse(tbUsuarios);
-    if (tbUsuarios = null)
-        tbUsuarios = [];
-    else
-        validate();
-})
-
-function Add() {
-    var user = JSON.stringify({
-        email: $("#email").val(),
-        usuario: $("#name").val(),
-        senha: $("#password").val(),
-        tipo: $("#tipo").val(),
-        frequencia: $("#Freq").val(),
-        idade: $("#Id").val()
-    });
-    tbUsuarios.push(user);
-    localStorage.setItem("tbUsuarios", JSON.stringify(tbUsuarios));
-    alert("Registro adicionado.");
-    operação = "A";
-    return true;
-
-}
-$("#cadastro").on("submite", function() {
-    if (operação == "A")
-        return Add();
-    else
-        return alert("Cadastro já efetuado, faça login.");
-})
-
-function validate() {
-    user.usuario = document.getElementById(usuario);
-    if (val() == 0)
-        alert(Usuario_inexistente);
-    else
-        user.senha = document.getElementById(senha);
-    if (val() == 0)
-        alert(Senha_incorreta)
-    else
-        return "#btnEntrar";
-}
-
-function show() {
-
-    let data = JSON.parse(xhr.responseText);
-    let textoHTML = '';
-    if ($("#name").val() != 0) {
-        textoHTML += '<div class="user"><p class = "user-name" >Olá, ${usuario} < /p> <i class = "fas fa-user-circle" > < /i> < /div > '
-    } else {
-        textoHTML += '<div class="user"> <p class = "user-name" > Olá, user< /p> <i class = "fas fa-user-circle" > < /i> < /div > '
-    }
-    document.getElementById('tela').innerHTML = textoHTML;
-}
-
-*/

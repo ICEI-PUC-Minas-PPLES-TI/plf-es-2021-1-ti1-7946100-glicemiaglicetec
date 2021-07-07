@@ -12,47 +12,56 @@
     <title>Cadastro</title>
 </head>
 
-<body>
-    <section class="cadastro">
-        <div class="first-column">
-            <h2>Bem vindo!</h2>
+<body onload="init()">
+    <h1>Cadastro de Diabéticos</h1>
+
+    <div class="container">
+        <div class="row">
+            <div id="msg" class="col-sm-10 offset-sm-1 ">
+            </div>
         </div>
-        <form class="form ">
-            <div class="card-group">
-                <h3 class=" Title ">Cadastre-se</h3>
+
+        <form id="form-diabetico">
+            <div class="form-group row">
+                <div class="col-sm-4">
+                    <label for="inputId">Id</label>
+                    <input type="text" class="form-control" id="inputId" placeholder="ID" disabled>
+                </div>
+                <div class="col-sm-8">
+                    <label for="inputNome">Nome (*)</label>
+                    <input type="text" class="form-control" id="inputNome" required placeholder="Informe o nome do contato">
+                </div>
             </div>
-            <div class="card-group">
-                <input class="input-login" type="text" placeholder="Nome" id="txtNome" required>
+            <div class="form-group row">
+                <div class="col-sm-5">
+                    <label for="inputSenha">Senha (*)</label>
+                    <input type="password" class="form-control" id="inputSenha" required placeholder="Telefone">
+                </div>
+                <div class="col-sm-7">
+                    <label for="inputEmail">E-mail (*)</label>
+                    <input type="email" class="form-control" id="inputEmail" required placeholder="Informe o e-mail">
+                </div>
             </div>
-            <div class="card-group">
-                <input class="input-login" type="email" placeholder="Email" id="txtEmail" required>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <label for="inputTipo_Diabetes">Tipo de Diabetes (*)</label>
+                    <input type="text" class="form-control" id="inputTipo_Diabetes" required placeholder="Informe a categoria do contato">
+                </div>
             </div>
-            <div class="card-group">
-                <input class="input-login" type="password" placeholder="Senha" id="txtSenha" required>
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <label for="inputNascimento">Data de nascimento (*)</label>
+                    <input type="DA" class="form-control" id="inputNascimento" required placeholder="Web Site">
+                </div>
             </div>
-            <div class="card-group">
-                <input class="input-login" type="text " placeholder="Tipo de Diabetes" id="txtTipoDiabetes" required>
+            <div class="form-group row">
+                <div class="col-sm-4">
+                    <small>Campos obrigatórios (*)</small>
+                </div>
             </div>
-            <div class="card-group">
-                <input class="input-login" type="text" placeholder="Frequência de medições" id="txtMedicoes" required>
-            </div>
-            <div class="card-group ">
-                <input class="input-login" type="date" placeholder="Data de nascimento" id="txtDataNasc" required>
-            </div>
-            <div class="card--group"><label><input type="checkbox">Manter conectado</label></div>
-            <div class="card-group button">
-                <a href="main.html"><button onclick="Adicionar()" class="btn_acessar ">Pronto</button></a>
-            </div>
-            <div class="login ">
-                <p>Para usuários antigos:</p>
-                <a href="login.html">
-                    <button class="btn-login">Login</button>
-                </a>
-            </div>
-        </form>
-        </div>
-        </div>
-    </section>
+            <a href="main.html"><input type="button" class="btn_acessar" value="Login"></a>
+    </div>
+    </form>
 </body>
 
 </html>
