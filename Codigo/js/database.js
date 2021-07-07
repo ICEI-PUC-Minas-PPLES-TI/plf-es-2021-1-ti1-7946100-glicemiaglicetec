@@ -1,4 +1,4 @@
-var db_diabeticos_inicial = {
+var db_usuarios_inicial = {
     "data": [{
             "id": 1,
             "nome": "Venancia Matias",
@@ -6,7 +6,6 @@ var db_diabeticos_inicial = {
             "email": "veve@gmail.com",
             "data_nasciment": "17/04/1942",
             "senha": "Craqueneto1704"
-
         },
         {
             "id": 2,
@@ -31,7 +30,6 @@ var db_diabeticos_inicial = {
             "email": "melhorvingador@gmail.com",
             "data_nasciment": "04/04/2004",
             "senha": "Filhinhodepapai"
-
         },
         {
             "id": 5,
@@ -40,7 +38,6 @@ var db_diabeticos_inicial = {
             "email": "picole@gmail.com",
             "data_nasciment": "13/05/1972",
             "senha": "picoleidoso"
-
         },
         {
             "id": 6,
@@ -54,46 +51,156 @@ var db_diabeticos_inicial = {
     ]
 }
 
-var db = JSON.parse(localStorage.getItem('db_diabeticos'));
+var db = JSON.parse(localStorage.getItem('db_usuarios'));
 if (!db) {
-    db = db_diabeticos_inicial
+    db = db_usuarios_inicial;
 };
 
 function displayMessage(msg) {
     $('#msg').html('<div class="alert alert-warning">' + msg + '</div>');
 }
 
-function insertDiabetico(diabetico) {
+function insertUsuario(usuario) {
     let novoId = db.data[db.data.length - 1].id + 1;
-    let novoDiabetico = {
+    let novoUsuario = {
         "id": novoId,
-        "nome": diabetico.nome,
-        "Tipo_Diabetes": diabetico.Tipo_Diabetes,
-        "email": diabetico.email,
-        "data_nasciment": diabetico.data_nasciment,
-        "senha": diabetico.senha,
+        "nome": usuario.nome,
+        "Tipo_Diabetes": usuario.Tipo_Diabetes,
+        "email": usuario.email,
+        "data_nasciment": usuario.data_nasciment,
+        "senha": usuario.senha,
     };
 
-    db.data.push(novoDiabetico);
+    db.data.push(novoUsuario);
     displayMessage("Cadastro inserido com sucesso");
     localStorage.setItem('db_contato', JSON.stringify(db));
 }
 
-function updateDiabetico(id, diabetico) {
+function updateUsuario(id, usuario) {
     let index = db.data.map(obj => obj.id).indexOf(id);
-    db.data[index].nome = diabetico.nome,
-        db.data[index].email = diabetico.email,
-        db.data[index].Tipo_Diabetes = diabetico.Tipo_Diabetes,
-        db.data[index].data_nasciment = diabetico.data_nasciment,
-        db.data[index].senha = diabetico.senha,
+    db.data[index].nome = usuario.nome,
+    db.data[index].email = usuario.email,
+    db.data[index].Tipo_Diabetes = usuario.Tipo_Diabetes,
+    db.data[index].data_nasciment = usuario.data_nasciment,
+    db.data[index].senha = usuario.senha,
 
-        displayMessage("Cadastro alterado com sucesso");
-    localStorage.setItem('db_contato', JSON.stringify(db));
+    displayMessage("Cadastro alterado com sucesso");
+
+    localStorage.setItem('db_usuarios', JSON.stringify(db));
 }
 
-function deleteDiabetico(id) {
+function deleteUsuario(id) {
     db.data = db.data.filter(function(element) { return element.id != id });
 
     displayMessage("Cadastro removido com sucesso");
-    localStorage.setItem('db_diabetico', JSON.stringify(db));
+    localStorage.setItem('db_usuarios', JSON.stringify(db));
+}
+
+function init() {
+    // Adiciona funções para tratar os eventos 
+    $("#btnInsert").click(function () {
+        // Verfica se o formulário está preenchido corretamente
+        if (!$('#form-contato')[0].checkValidity()) {
+            displayMessage("Preencha o formulário corretamente.");
+            return;
+        }
+
+        // Obtem os valores dos campos do formulário
+        let campoNome = $("#inputNome").val();
+        let campoTelefone = $("#inputTelefone").val();
+        let campoEmail = $('#inputEmail').val();
+        let campoCidade = $("#inputCidade").val();
+        let campoCategoria = $('#inputCategoria').val();
+        let campoSite = $('#inputSite').val();
+        let contato = { nome: campoNome, 
+            telefone: campoTelefone, 
+            email: campoEmail, 
+            cidade: campoCidade, 
+            categoria: campoCategoria,
+            website: campoSite };
+
+        insertContato(contato);
+
+        // Reexibe os contatos
+        exibeContatos();
+
+        // Limpa o formulario
+        $("#form-contato")[0].reset();
+    });
+
+    // Intercepta o click do botão Alterar
+    $("#btnUpdate").click(function () {
+        // Obtem os valores dos campos do formulário
+        let campoId = $("#inputId").val();
+        if (campoId == "") {
+            displayMessage("Selecione um contato para ser alterado.");
+            return;
+        }
+        let campoNome = $("#inputNome").val();
+        let campoTelefone = $("#inputTelefone").val();
+        let campoEmail = $("#inputEmail").val();
+        let campoCidade = $("#inputCidade").val();
+        let campoCategoria = $("#inputCategoria").val();
+        let campoSite = $('#inputSite').val();
+        let contato = { nome: campoNome, 
+            telefone: campoTelefone, 
+            email: campoEmail, 
+            cidade: campoCidade, 
+            categoria: campoCategoria,
+            website: campoSite };
+
+        updateContato(parseInt(campoId), contato);
+
+        // Reexibe os contatos
+        exibeContatos();
+
+        // Limpa o formulario
+        $("#form-contato")[0].reset();
+    });
+
+    // Intercepta o click do botão Excluir
+    $("#btnDelete").click(function () {
+        let campoId = $("#inputId").val();
+        if (campoId == "") {
+            displayMessage("Selecione um contato a ser excluído.");
+            return;
+        }
+        deleteContato(parseInt(campoId));
+
+        // Reexibe os contatos
+        exibeContatos();
+
+        // Limpa o formulario
+        $("#form-contato")[0].reset();
+    });
+
+    // Intercepta o click do botão Listar Contatos
+    $("#btnClear").click(function () {
+        $("#form-contato")[0].reset();
+    });
+
+    // Oculta a mensagem de aviso após alguns segundos
+    $('#msg').bind("DOMSubtreeModified", function () {
+        window.setTimeout(function () {
+            $(".alert").fadeTo(500, 0).slideUp(500, function () {
+                $(this).remove();
+            });
+        }, 5000);
+    });
+
+    // Preenche o formulário quando o usuario clicar em uma linha da tabela 
+    $("#grid-contatos").on("click", "tr", function (e) {
+        let linhaContato = this;
+        colunas = linhaContato.querySelectorAll("td");
+
+        $("#inputId").val(colunas[0].innerText);
+        $("#inputNome").val(colunas[1].innerText);
+        $("#inputTelefone").val(colunas[2].innerText);
+        $("#inputEmail").val(colunas[3].innerText);
+        $("#inputCidade").val(colunas[4].innerText);
+        $("#inputCategoria").val(colunas[5].innerText);
+        $("#inputSite").val(colunas[6].innerText);
+    });
+
+    exibeContatos();
 }

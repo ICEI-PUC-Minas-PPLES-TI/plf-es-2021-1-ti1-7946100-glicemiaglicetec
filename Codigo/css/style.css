@@ -54,6 +54,10 @@ hr {
     margin: 1rem 0;
 }
 
+.btn_acessar:hover {
+    background-image: linear-gradient( to right, #0184a5, #35dcd4);
+}
+
 .first-column {
     text-align: center;
     padding-top: 2rem;
@@ -137,9 +141,9 @@ ul > a {
 
 .title-receitas {
     text-align: center;
-    padding: 2rem 0 1rem;
+    padding: 2rem 1rem 1rem;
     font-weight: bold;
-    color: rgb(0, 157, 255);
+    color: black;
 }
 
 .img-receita {
@@ -157,7 +161,7 @@ ul > a {
 }
 
 .receita-title > a {
-    color: black !important;
+    color: rgb(0, 157, 255) !important;
     text-decoration: underline;
 }
 
@@ -199,22 +203,88 @@ ul > a {
     color: black;
 }
 
-.card-header {
-    background-color: #87cefa;
+.accordion-button {
+    background-color: #87cefa !important;
 }
 
-.card-body > a {
+.accordion-body > a {
     color: black !important;
+}
+
+.accordion-button:not(.collapsed) {
+    color: black !important;
+}
+
+.accordion {
+    margin-top: 3rem;
 }
 
 .input-datetime {
     display: block;
 }
 
+.text-avalie {
+    padding-top: 2rem;
+    text-align: justify;
+}
+
+.logo-avalie {
+    color: #87cefa;
+    font-size: 5rem;
+    padding-bottom: 1rem;
+}
+
+.card-top-avalie {
+    text-align: center;
+    padding: 2rem 5rem 0;
+}
+
+.btn-avalie {
+    margin: 2rem 2rem 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: initial;
+}
+  
+.container__aluno {
+    width: 200px;
+    margin: 20px;
+}
+  
+.container__aluno-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+}
+
+.aluno-name {
+    text-align: center;
+}
+
+.logo-conheca {
+    color: #87cefa;
+    font-size: 6rem;
+    padding-bottom: 1rem;
+}
+
+.card-top-conheca {
+    text-align: center;
+    padding: 2rem 2rem 0;
+    display: flex;
+}
+
+.card-top-conheca > h5 {
+    align-items: center;
+}
+
 footer {
     padding: 0.8rem 0.5rem;
     background-color: rgb(0, 157, 255);
-    margin-top: 5rem;
+    margin-top: 3rem;
     color: white;
     font-size: 0.8rem;
 }
@@ -239,6 +309,9 @@ footer {
     .cadastro {
         margin: 0 5rem;
     }
+    .input-tipo {
+
+    }
     .img-receita {
         min-width: 100%;
         max-height: auto;
@@ -246,9 +319,6 @@ footer {
     .carousel-item {
         height: 450px;
         min-width: fit-content;
-    }
-    .card-video {
-        padding-bottom: 2rem;
     }
     .carrossel {
         margin: 0 2rem;
@@ -267,6 +337,28 @@ footer {
     .medicao {
         margin: 0 4rem;
     }
+    .login-page {
+        margin: 0 8rem;
+    }
+    .text-footer {
+        padding: 0 2rem;
+    }
+    .text-avalie {
+        padding-top: 2rem;
+        text-align: justify;
+    }
+    .logo-avalie {
+        font-size: 6rem;
+    }    
+    .input-avalie {
+        width: 100%;
+    }
+    .btn-avalie {
+        margin: 2rem 2rem 0;
+    }
+    .avalie {
+        padding: 0 5rem;
+    }
 }
 
 @media screen and (min-width:1024px) {
@@ -281,13 +373,22 @@ footer {
         margin: 0 10rem;
     }  
     #noticias {
-        margin: 0 2rem;
+        margin: 0 7rem;
+    }
+    .card-video {
+        margin: 0 5rem;
     }
     .cadastro {
         margin: 0 10rem;
     }  
     .text-mais {
         text-align: center;
+    }
+    .login-page {
+        margin: 0 25rem;
+    }
+    .avalie {
+        padding: 0 10rem;
     }
 }
 
@@ -299,7 +400,10 @@ footer {
         margin: 0 23rem;
     }
     #noticias {
-        margin: 0 12rem;
+        margin: 0 20rem;
+    }
+    .card-video {
+        margin: 0 18rem !important;
     }
     .carousel-item {
         height: 450px;
@@ -312,5 +416,16 @@ footer {
     }
     .text-footer {
         padding: 0 10rem;
+    }
+    .login-page {
+        margin: 0 30rem;
+    }
+    .navbar,
+    .p-4 {
+        padding-right: 10rem !important;
+        padding-left: 10rem !important;
+    }
+    .avalie {
+        padding: 0 25rem;
     }
 }

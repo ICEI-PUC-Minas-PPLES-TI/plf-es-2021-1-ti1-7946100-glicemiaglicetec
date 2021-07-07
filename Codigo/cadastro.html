@@ -13,55 +13,75 @@
 </head>
 
 <body onload="init()">
-    <h1>Cadastro de Diabéticos</h1>
 
-    <div class="container">
-        <div class="row">
-            <div id="msg" class="col-sm-10 offset-sm-1 ">
-            </div>
+    <section class="cadastro">
+
+        <div class="first-column">
+            <h2>Bem vindo!</h2>
         </div>
+    
+        <form class="form">
+            <div class="card-group">
+                <h3 class=" Title ">Cadastre-se</h3>
+            </div>
+            <div class="card-group">
+                <input for="inputNome" id="inputNome" class="input-login" type="text" placeholder="Nome*" required>
+            </div>
+            <div class="card-group">
+                <input for="inputEmail" id="inputEmail" class="input-login" type="email" placeholder="Email*" required>
+            </div>
+            <div class="card-group">
+                <input for="inputSenha" id="inputSenha" class="input-login" type="password" placeholder="Senha*" required>
+            </div>
+            <div class="card-group">
+                <input for="inputTipo_Diabetes" id="inputTipo_Diabetes" class="input-login" type="text" placeholder="Tipo de Diabetes*" required>
+                <select name="Tipo de Diabetes" id="tipo-diabetes" class="input-tipo" required>
+                    <option value="default" class="nome-tipo" disabled selected>Tipo de Diabetes</option>
+                    <option value="1">Diabete Tipo 1</option>
+                    <option value="2">Diabete Tipo 2</option>
+                    <option value="G">Diabete Gestacional</option>
+                    <option value="P">Pré-diabetes</option>
+                </select>
+            </div>
+            <div class="card-group">
+                <input class="input-login" type="text" placeholder="Frequência de medições*" required>
+                <select name="Tipo de Diabetes" id="frequencia" class="input-tipo" required>
+                    <option value="default" class="nome-tipo" disabled selected>Frequência de medições</option>
+                    <option value="6d">6x por dia</option>
+                    <option value="5d">5x por dia</option>
+                    <option value="4d">4x por dia</option>
+                    <option value="3d">3x por dia</option>
+                    <option value="2d">2x por dia</option>
+                    <option value="1d">1x por dia</option>
+                    <option value="6s">6x na semana</option>
+                    <option value="5s">5x na semana</option>
+                    <option value="4s">4x na semana</option>
+                    <option value="3s">3x na semana</option>
+                    <option value="2s">2x na semana</option>
+                    <option value="2s">1x na semana</option>
+                </select>
+            </div>
+            <div class="card-group ">
+                <input for="inputNascimento" id="inputNascimento" class="input-login" type="text" placeholder="Data de nascimento*" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+            </div>
+        </form>
+    
+        <div class="card--group"><label><input type="checkbox">Manter conectado</label></div>
+        <div class="card-group button">
+            <a href="../index.html"><button class="btn_acessar">Pronto</button></a>
+        </div>
+    
+        <div class="login">
+            <p>Para usuários antigos:</p>
+            <a href="../index.html">
+                <button class="btn-login">Login</button>
+            </a>
+        </div>
+    </section>
 
-        <form id="form-diabetico">
-            <div class="form-group row">
-                <div class="col-sm-4">
-                    <label for="inputId">Id</label>
-                    <input type="text" class="form-control" id="inputId" placeholder="ID" disabled>
-                </div>
-                <div class="col-sm-8">
-                    <label for="inputNome">Nome (*)</label>
-                    <input type="text" class="form-control" id="inputNome" required placeholder="Informe o nome do contato">
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-5">
-                    <label for="inputSenha">Senha (*)</label>
-                    <input type="password" class="form-control" id="inputSenha" required placeholder="Telefone">
-                </div>
-                <div class="col-sm-7">
-                    <label for="inputEmail">E-mail (*)</label>
-                    <input type="email" class="form-control" id="inputEmail" required placeholder="Informe o e-mail">
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-6">
-                    <label for="inputTipo_Diabetes">Tipo de Diabetes (*)</label>
-                    <input type="text" class="form-control" id="inputTipo_Diabetes" required placeholder="Informe a categoria do contato">
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-12">
-                    <label for="inputNascimento">Data de nascimento (*)</label>
-                    <input type="DA" class="form-control" id="inputNascimento" required placeholder="Web Site">
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-4">
-                    <small>Campos obrigatórios (*)</small>
-                </div>
-            </div>
-            <a href="main.html"><input type="button" class="btn_acessar" value="Login"></a>
-    </div>
-    </form>
+    <footer>
+        <p class="text-footer">Copyright Glicetec - Todos os direitos reservados</p>
+    </footer>
 </body>
 
 </html>

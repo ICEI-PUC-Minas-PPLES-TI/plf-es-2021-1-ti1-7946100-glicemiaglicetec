@@ -39,7 +39,7 @@ buttonAddTask.addEventListener('click', function () {
         inputDatetime.value = "";
         errorMessage.innerHTML = "";
     } else {
-        return errorMessage.innerHTML = 'Por favor, coloque o valor da sua glicemia (dl/mg) e/ou a data e hora da medição.';
+        return errorMessage.innerHTML = 'Por favor, coloque o valor da sua glicemia (dl/mg), a data e a hora da medição.';
     }
 });
 
