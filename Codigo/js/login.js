@@ -21,7 +21,7 @@ function generateUserId() {
 const dadosIniciais = {
     usuarios: [{
             "id": generateUserId(),
-            "nome": "Peter",
+            "login": "Peter",
             "senha": "vaiteia22",
             "nome": "Miranha",
             "email": "miranha@gmail.com"
