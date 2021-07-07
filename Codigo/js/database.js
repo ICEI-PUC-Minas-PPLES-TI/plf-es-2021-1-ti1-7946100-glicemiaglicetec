@@ -23,21 +23,9 @@ function Add() {
     return true;
 }
 
-function validate() {
-    user.usuario = document.getElementById(usuario);
-    if (val() == 0)
-        alert(Usuario_inexistente);
-    else
-        user.senha = document.getElementById(senha);
-    if (val() == 0)
-        alert(Senha_incorreta)
-    else
-        return "#btnEntrar";
-}
-
 function editUser() {
     tbUsuarios[indice_selecionado] = JSON.stringify({
-        usuario: $("txtname"),
+        usuario: $("txtname").val(),
         email: $("#txtemail").val(),
         usuario: $("#txtname").val(),
         senha: $("#txtpassword").val(),
@@ -50,16 +38,33 @@ function editUser() {
     return true;
 }
 
-function validate() {
-    var user = document.getElementById(usuario);
-    if (val() == 0)
-        alert(Usuario_inexistente);
-    else
-        var user = document.getElementById(senha);
-    if (val() == 0)
-        alert(Senha_incorreta)
-    else
-        return "#btnEntrar";
+function login(email, senha) {
+    if (typeof email == 'string' && typeof senha == 'string' && email.length > 0 && senha.length > 0) {
+        var loggeduser;
+        var user = users[index];
+        if (email === user.email && senha === user.senha)
+            loggeduser = user;
+    }
+    if (typeof loggeduser != 'undefined') {
+        loggedusers[loggeduser.id] = true;
+        updatelist();
+        return loggeduser;
+    }
+}
+
+return false;
+
+function logout(usuario) {
+    if (loggedusers[usuario]) {
+        var temporary = [];
+        for (var id in loggedusers)
+            if (id != usuario)
+                temporary[id] = true;
+        loggedusers = temporary;
+        updatelist();
+        return true;
+    }
+    return false;
 }
 
 function show() {
@@ -81,9 +86,3 @@ function show() {
     }
     document.getElementById('tela').innerHTML = textoHTML;
 }
-$("#cadastro").on("submite", function() {
-    if (operação == "A")
-        return Add();
-    else
-        return alert("Cadastro já efetuado, faça login.");
-});
