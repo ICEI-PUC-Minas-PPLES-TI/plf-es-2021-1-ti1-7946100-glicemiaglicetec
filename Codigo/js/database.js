@@ -73,18 +73,18 @@ function insertUsuario(usuario) {
 
     db.data.push(novoUsuario);
     displayMessage("Cadastro inserido com sucesso");
-    localStorage.setItem('db_contato', JSON.stringify(db));
+    localStorage.setItem('db_usuario', JSON.stringify(db));
 }
 
 function updateUsuario(id, usuario) {
     let index = db.data.map(obj => obj.id).indexOf(id);
     db.data[index].nome = usuario.nome,
-    db.data[index].email = usuario.email,
-    db.data[index].Tipo_Diabetes = usuario.Tipo_Diabetes,
-    db.data[index].data_nasciment = usuario.data_nasciment,
-    db.data[index].senha = usuario.senha,
+        db.data[index].email = usuario.email,
+        db.data[index].Tipo_Diabetes = usuario.Tipo_Diabetes,
+        db.data[index].data_nasciment = usuario.data_nasciment,
+        db.data[index].senha = usuario.senha,
 
-    displayMessage("Cadastro alterado com sucesso");
+        displayMessage("Cadastro alterado com sucesso");
 
     localStorage.setItem('db_usuarios', JSON.stringify(db));
 }
@@ -97,110 +97,81 @@ function deleteUsuario(id) {
 }
 
 function init() {
-    // Adiciona funções para tratar os eventos 
-    $("#btnInsert").click(function () {
-        // Verfica se o formulário está preenchido corretamente
-        if (!$('#form-contato')[0].checkValidity()) {
-            displayMessage("Preencha o formulário corretamente.");
+    $("#btnInsert").click(function() {
+        if (!$('#form-usuario')[0].checkValidity()) {
+            displayMessage("Preencha o cadastro com suas informações");
             return;
         }
-
-        // Obtem os valores dos campos do formulário
         let campoNome = $("#inputNome").val();
-        let campoTelefone = $("#inputTelefone").val();
+        let campoTipo_Diabetes = $("#inputTipo_Diabetes").val();
         let campoEmail = $('#inputEmail').val();
-        let campoCidade = $("#inputCidade").val();
-        let campoCategoria = $('#inputCategoria').val();
-        let campoSite = $('#inputSite').val();
-        let contato = { nome: campoNome, 
-            telefone: campoTelefone, 
-            email: campoEmail, 
-            cidade: campoCidade, 
-            categoria: campoCategoria,
-            website: campoSite };
+        let camposenha = $("#inputsenha").val();
+        let campodata_nasciment = $('#inputdata_nasciment').val();
+        let usuario = {
+            nome: campoNome,
+            Tipo_Diabetes: campoTipo_Diabetes,
+            email: campoEmail,
+            senha: camposenha,
+            data_nasciment: campodata_nasciment
+        };
 
-        insertContato(contato);
-
-        // Reexibe os contatos
-        exibeContatos();
-
-        // Limpa o formulario
-        $("#form-contato")[0].reset();
+        insertUsuario(usuario);
+        exibeUsuario();
+        $("#form-usuario")[0].reset();
     });
-
-    // Intercepta o click do botão Alterar
-    $("#btnUpdate").click(function () {
-        // Obtem os valores dos campos do formulário
+    $("#btnUpdate").click(function() {
         let campoId = $("#inputId").val();
         if (campoId == "") {
-            displayMessage("Selecione um contato para ser alterado.");
+            displayMessage("Selecione um usuario para ser alterado.");
             return;
         }
         let campoNome = $("#inputNome").val();
-        let campoTelefone = $("#inputTelefone").val();
-        let campoEmail = $("#inputEmail").val();
-        let campoCidade = $("#inputCidade").val();
-        let campoCategoria = $("#inputCategoria").val();
-        let campoSite = $('#inputSite').val();
-        let contato = { nome: campoNome, 
-            telefone: campoTelefone, 
-            email: campoEmail, 
-            cidade: campoCidade, 
-            categoria: campoCategoria,
-            website: campoSite };
+        let campoTipo_Diabetes = $("#inputTipo_Diabetes").val();
+        let campoEmail = $('#inputEmail').val();
+        let camposenha = $("#inputsenha").val();
+        let campodata_nasciment = $('#inputdata_nasciment').val();
+        let usuario = {
+            nome: campoNome,
+            Tipo_Diabetes: campoTipo_Diabetes,
+            email: campoEmail,
+            senha: camposenha,
+            data_nasciment: campodata_nasciment
+        };
 
-        updateContato(parseInt(campoId), contato);
-
-        // Reexibe os contatos
-        exibeContatos();
-
-        // Limpa o formulario
-        $("#form-contato")[0].reset();
+        updateUsuario(parseInt(campoId), usuario);
+        exibeUsuario();
+        $("#form-usuario")[0].reset();
     });
-
-    // Intercepta o click do botão Excluir
-    $("#btnDelete").click(function () {
+    $("#btnDelete").click(function() {
         let campoId = $("#inputId").val();
         if (campoId == "") {
-            displayMessage("Selecione um contato a ser excluído.");
+            displayMessage("Selecione um usuario a ser excluído.");
             return;
         }
-        deleteContato(parseInt(campoId));
-
-        // Reexibe os contatos
-        exibeContatos();
-
-        // Limpa o formulario
-        $("#form-contato")[0].reset();
+        deleteUsuario(parseInt(campoId));
+        exibeUsuario();
+        $("#form-usuario")[0].reset();
     });
-
-    // Intercepta o click do botão Listar Contatos
-    $("#btnClear").click(function () {
-        $("#form-contato")[0].reset();
+    $("#btnClear").click(function() {
+        $("#form-usuario")[0].reset();
     });
-
-    // Oculta a mensagem de aviso após alguns segundos
-    $('#msg').bind("DOMSubtreeModified", function () {
-        window.setTimeout(function () {
-            $(".alert").fadeTo(500, 0).slideUp(500, function () {
+    $('#msg').bind("DOMSubtreeModified", function() {
+        window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function() {
                 $(this).remove();
             });
         }, 5000);
     });
-
-    // Preenche o formulário quando o usuario clicar em uma linha da tabela 
-    $("#grid-contatos").on("click", "tr", function (e) {
-        let linhaContato = this;
-        colunas = linhaContato.querySelectorAll("td");
+    $("#grid-usuarios").on("click", "tr", function(e) {
+        let linhaUsuario = this;
+        colunas = linhaUsuario.querySelectorAll("td");
 
         $("#inputId").val(colunas[0].innerText);
         $("#inputNome").val(colunas[1].innerText);
-        $("#inputTelefone").val(colunas[2].innerText);
+        $("#inputTipo_Diabetes").val(colunas[2].innerText);
         $("#inputEmail").val(colunas[3].innerText);
-        $("#inputCidade").val(colunas[4].innerText);
-        $("#inputCategoria").val(colunas[5].innerText);
-        $("#inputSite").val(colunas[6].innerText);
+        $("#inputsenha").val(colunas[4].innerText);
+        $("#inputdata_nasciment").val(colunas[5].innerText);
     });
-
-    exibeContatos();
+    exibeUsuarios();
 }
