@@ -151,7 +151,7 @@ ul > a {
 
 .img-receita {
     max-width: 100%;
-    max-height: auto;
+    min-height: auto;
 }
 
 .carousel-item {
@@ -266,6 +266,8 @@ ul > a {
 
 .aluno-name {
     text-align: center;
+    font-size: 1.2rem;
+    padding-top: 0.5rem;
 }
 
 .logo-conheca {
@@ -282,6 +284,17 @@ ul > a {
 
 .card-top-conheca > h5 {
     align-items: center;
+}
+
+.card-top-title {
+    margin: auto 0;
+    font-size: 1.5rem;
+}
+
+.text-conheca {
+    text-align: justify;
+    font-size: 1.2rem;
+    margin: 1rem;
 }
 
 footer {
@@ -316,12 +329,12 @@ footer {
 
     }
     .img-receita {
-        min-width: 100%;
-        max-height: auto;
+        min-height: fit-content !important;  
+        background-size: auto;
     }
     .carousel-item {
         height: 450px;
-        min-width: fit-content;
+        width: 100%;
     }
     .carrossel {
         margin: 0 2rem;
@@ -362,6 +375,15 @@ footer {
     .avalie {
         padding: 0 5rem;
     }
+    .logo-conheca {
+        padding: 0 1rem 1rem;
+    }
+    .card-top-conheca {
+        padding: 2rem 10rem 0;
+    }
+    .text-conheca {
+        margin: 1rem 2rem;
+    }
 }
 
 @media screen and (min-width:1024px) {
@@ -392,6 +414,9 @@ footer {
     }
     .avalie {
         padding: 0 10rem;
+    }
+    .text-conheca {
+        margin: 1rem 5rem;
     }
 }
 
