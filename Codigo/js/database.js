@@ -1,4 +1,3 @@
-// declara um conjunto inicial de contatos
 var db_diabeticos_inicial = {
     "data": [{
             "id": 1,
