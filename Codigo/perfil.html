@@ -74,25 +74,20 @@
                             <form action="?act=upd" method="POST" name="form1" class="form-horizontal">
                                 <div class="box-body">
                                     <div class="col-sm-12">
-                                        <div a lign="center"> <img alt="User Pic" src="<?php echo $foto;  ?>" id="profile-image1" class="img-circle img-responsive"> Trocar foto de perfil
+                                        <div a lign="center"> <img  id="profile-image1" class="img-circle img-responsive"> Trocar foto de perfil
                                         </div>
                                         <label for="foto" class="col-sm-4 control-label"></label>
                                         <div class="col-md-5">
                                             <input type="file" name="foto" value="<?php
-                                        // Preenche o foto no campo foto com um valor " value "
-                                        echo (isset($foto) && ($foto != null || $foto != " ")) ? $foto : '';
-                                        ?>" class="form-control" />
+                                        // Preenche o foto no campo foto com um valor "
                                         </div>
                                         <br>
 
                                         <!-- /input-group -->
                                     </div>
 
-                                    <input type="hidden" name="id" value="<?php
-                                        // Preenche o diabete no campo diabete com um valor " value "
-                                        echo (isset($id) && ($id != null || $id != " ")) ? $id : '';
 
-                                        ?>" class="form-control" />
+                                    
 
                                     <div class="clearfix"></div>
                                     <hr style="margin:5px 0 5px 0;">
@@ -101,62 +96,43 @@
 
                                             <div for="nome" class="col-sm-5 col-xs-6 tital ">Nome</div>
                                             <div class="col-sm-5">
-                                                <input type="text" name="nome" value="<?php
-                                        // Preenche o diabete no campo diabete com um valor " value "
-                                        echo (isset($nome) && ($nome != null || $nome != " ")) ? $nome : '';
-
-                                        ?>" class="form-control" />
+                                                <input type="text" name="email" placeholder="Informe novo nome"
                                             </div>
 
 
                                             <div for="nascimento" class="col-sm-5 col-xs-6 tital ">Nascimento</div>
                                             <div class="col-sm-5">
-                                                <input type="text" name="nascimento" value="<?php
-                                        // Preenche o diabete no campo diabete com um valor " value "
-                                        echo (isset($nascimento) && ($nascimento != null || $nascimento != " ")) ? $nascimento : '';
-
-                                        ?>" class="form-control" />
+                                                <input type="text" name="email" placeholder="Informe a nova data"
                                             </div>
                                         </div>
-
                                         <div for="email" class="col-sm-5 col-xs-6 tital ">Email</div>
                                         <div class="col-sm-5">
-                                            <input type="text" name="email" value="<?php
-                                        // Preenche o diabete no campo diabete com um valor " value "
-                                        echo (isset($email) && ($email != null || $email != " ")) ? $email : '';
-
-                                        ?>" class="form-control" />
+                                            <input type="text" name="email" placeholder="Informe o novo email"
                                         </div>
                                     </div>
 
                                     <div for="diabete" class="col-sm-5 col-xs-6 tital ">Diabetes</div>
                                     <div class="col-sm-5">
-                                        <input type="text" name="diabete" value="<?php
-                                        // Preenche o diabete no campo diabete com um valor " value "
-                                        echo (isset($diabete) && ($diabete != null || $diabete != " ")) ? $diabete : '';
-
-                                        ?>" class="form-control" />
-                                    </div>
+                                        <input type="text" name="email" placeholder="Informe o tipo de Diabetes"
+                                    
                                 </div>
 
                                 <div for="pass" class="col-sm-5 col-xs-6 tital ">Senha</div>
                                 <div class="col-sm-5">
-                                    <input type="password" name="pass" value="<?php
-                                        // Preenche o diabete no campo diabete com um valor " value "
-                                        echo (isset($pass) && ($pass != null || $pass != " ")) ? $pass : '';
-
-                                        ?>" class="form-control" />
-                                </div>
-                        </div>
+                                    <input type="text" name="email" placeholder="Informe a nova Senha"
+                                
+                        
 
                         <div class="form-group">
                             <div class="col-sm-10 col-sm-offset-2">
 
-                                <center>
+                            
                                     <div class="pull-right">
-                                        <button type="submit" class="btn btn-primary" /><span class="glyphicon glyphicon-ok"></span> Editar</button>
+                                        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span>Editar</button>
+                                
                                     </div>
-                                </center>
+                            
+                                
                             </div>
                         </div>
                         </form>
@@ -164,86 +140,16 @@
                 </div>
             </div>
         </div>
-
-
-        <!-- Lista os usuarios do banco de dados  -->
-        <br><br>
-        <div class="row">
-            <div class="panel panel-default">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Nascimento</th>
-                            <th>Email</th>
-                            <th>Diabetes</th>
-                            <th>Senha</th>
-                            <th>Foto</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                                /**
-                                 *  Bloco que realiza o papel do Read - recupera os dados e apresenta na tela
-                                 */
-                                try {
-                                    $stmt = $conexao->prepare("SELECT * FROM usuario");
-                                    if ($stmt->execute()) {
-                                        while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
-
-                                            ?>
-                            <tr>
-                                <td>
-                                    <?php echo $rs->nome; ?>
-                                </td>
-                                <td>
-                                    <?php echo $rs->nascimento; ?>
-                                </td>
-                                <td>
-                                    <?php echo $rs->email; ?>
-                                </td>
-                                <td>
-                                    <?php echo $rs->pass; ?>
-                                </td>
-                                <td>
-                                    <?php echo $rs->diabete; ?>
-                                </td>
-                                <td>
-                                    <?php echo $rs->foto; ?>
-                                </td>
-                                <td>
-                                    <center>
-                                        <a href="?act=view&id=<?php echo $rs->id; ?>" class="btn btn-default btn-xs"><span
-                                            class="glyphicon glyphicon-eye-open"></span> Ver</a>
-                                        <a href="?act=del&id=<?php echo $rs->id; ?>" class="btn btn-danger btn-xs"><span
-                                            class="glyphicon glyphicon-remove"></span> Excluir</a>
-                                    </center>
-                                </td>
-                            </tr>
-                            <?php
-                                    }
-                                } else {
-                                    echo "Erro: Não foi possível recuperar os dados do banco de dados";
-                                }
-                            } catch (PDOException $erro) {
-                                echo "Erro: " . $erro->getMessage();
-                            }
-
-                            ?>
-                    </tbody>
-                </table>
+        <div id="footer">
+            <div id="footer-left">
+                <div id="link" style="font-size:130%; text-align: center; ">Copyright (c) 2003 Company Name <b style="color: rgb(184, 78, 78)">Glicetec</b>
+                </div>
             </div>
         </div>
-        </article>
-    </div>
-    <div id="footer">
-        <div id="footer-left">
-            <div id="link" style="font-size:130%; text-align: center; ">Copyright (c) 2003 Company Name <b style="color: rgb(184, 78, 78)">Glicetec</b>
-            </div>
-        </div>
-    </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    </body>
+    
+    </html>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-</body>
-
-</html>
+        
