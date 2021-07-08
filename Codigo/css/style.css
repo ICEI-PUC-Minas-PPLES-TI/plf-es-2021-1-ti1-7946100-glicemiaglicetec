@@ -319,6 +319,9 @@ footer {
     .medicao {
         margin: 0 1.5rem;
     }
+    .input-tipo {
+        width: 102%;
+    }
 }
 
 @media screen and (min-width:768px) {
@@ -326,7 +329,7 @@ footer {
         margin: 0 5rem;
     }
     .input-tipo {
-
+        width: 101%;
     }
     .img-receita {
         min-height: fit-content !important;  

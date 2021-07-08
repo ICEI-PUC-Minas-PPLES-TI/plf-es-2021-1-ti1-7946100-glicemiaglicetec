@@ -15,7 +15,7 @@
 
 <body>
     <section class="login-page">
-        <form id="login-form" class="form" method="post" onsubmit="loginUser(this)">
+        <form id="login-form" class="form" method="post" onsubmit="loginUser()">
             <div class="card" id="login">
                 <div class="card-top">
                     <h1><strong>GLICETEC</strong></h1>
@@ -23,10 +23,10 @@
                     <h2>Seu assistente médico pessoal</h2>
                 </div>
                 <div class="card-group">
-                    <input for="username" class="input-login" type="email" name="Usuario" placeholder="E-mail" required>
+                    <input for="username" id="username" class="input-login" type="email" name="Usuario" placeholder="E-mail" required>
                 </div>
                 <div class="card-group">
-                    <input for="password" class="input-login" type="password" name="Senha" placeholder="Senha" required>
+                    <input for="password" id="password" class="input-login" type="password" name="Senha" placeholder="Senha" required>
                 </div>
                 <div class="card-group link-checkbox">
                     <a class="esqueci" href="esqueci.html">
@@ -35,11 +35,11 @@
                     <label> <input type="checkbox" name="lembrar">Manter conectado</label>
                 </div>
                 <div class="card-group button">
-                    <a href="Codigo/main.html"><button class="btn_acessar" type="button" >Acessar</button></a>
+                    <a href="Codigo/main.html"><button onclick="initLoginApp()" class="btn_acessar" type="button" >Acessar</button></a>
                 </div>
                 <div class="card-group button">
                     <label>Novo usuário: </label>
-                    <a href="Codigo/main.html"><button type="button">Cadastre-se</button>
+                    <a href="Codigo/cadastro.html"><button type="button">Cadastre-se</button>
                     </a>
                 </div>
             </div>
@@ -51,6 +51,7 @@
     </footer>
 
     <script src="./Codigo/js/login.js"></script>
+    <script src="./Codigo/js/database.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
