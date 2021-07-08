@@ -73,19 +73,19 @@
                 </div>
             </div>
             <div class="card-group">
-                <input for="inputNome" id="inputNome" class="input-login" type="text" placeholder="Insira o novo nome" required>
+                <input for="inputNome" id="inputNome" class="input-login" type="text" placeholder="Insira o novo nome" value="Peter" required>
             </div>
             <div class="card-group">
-                <input for="inputEmail" id="inputEmail" class="input-login" type="email" placeholder="Insira o novo email" required>
+                <input for="inputEmail" id="inputEmail" class="input-login" type="email" placeholder="Insira o novo email" value="miranha@gmail.com" required>
             </div>
             <div class="card-group">
-                <input for="inputSenha" id="inputSenha" class="input-login" type="password" placeholder="Insira a nova senha" required>
+                <input for="inputSenha" id="inputSenha" class="input-login" type="password" placeholder="Insira a nova senha" value="vaiteia22" required>
             </div>
             <div class="card-group">
                 <select name="Tipo de Diabetes" id="tipo-diabetes" class="input-tipo" required>
-                    <option value="default" class="nome-tipo" disabled selected>Tipo de Diabetes</option>
+                    <option value="default" class="nome-tipo" disabled>Tipo de Diabetes</option>
                     <option value="1">Diabete Tipo 1</option>
-                    <option value="2">Diabete Tipo 2</option>
+                    <option value="2" selected>Diabete Tipo 2</option>
                     <option value="3">Diabete Tipo 3</option>
                     <option value="4">Diabete Tipo 4 (LADA)</option>
                     <option value="5">Diabete Tipo 5</option>
@@ -96,11 +96,11 @@
             </div>
             <div class="card-group">
                 <select name="Tipo de Diabetes" id="frequencia" class="input-tipo" required>
-                    <option value="default" class="nome-tipo" disabled selected>Frequência de medições</option>
-                    <option value="6d">6x por dia</option>
+                    <option value="" class="nome-tipo" disabled>Frequência de medições</option>
+                    <option value="default">6x por dia</option>
                     <option value="5d">5x por dia</option>
                     <option value="4d">4x por dia</option>
-                    <option value="3d">3x por dia</option>
+                    <option value="3d" default>3x por dia</option>
                     <option value="2d">2x por dia</option>
                     <option value="1d">1x por dia</option>
                     <option value="6s">6x na semana</option>
@@ -112,7 +112,7 @@
                 </select>
             </div>
             <div class="card-group ">
-                <input for="inputNascimento" id="inputNascimento" class="input-login" type="text" placeholder="Data de nascimento*" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+                <input for="inputNascimento" id="inputNascimento" class="input-login" type="text" placeholder="Data de nascimento*" value="12/04/2000" onfocus="(this.type='date')" onblur="(this.type='text')" required>
             </div>
         </form>
         <div class="card-group button">
