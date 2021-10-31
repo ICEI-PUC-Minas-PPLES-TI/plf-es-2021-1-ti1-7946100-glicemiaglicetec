@@ -1,0 +1,33 @@
+cff-version: 1.0.1
+message: Please cite this software using these metadata.
+title: Glicetec
+authors:
+  - family-names: Magela Alves
+    given-names: Leonardo Fernando 
+  - family-names: Gorle Almeida
+    given-names: Leonardo 
+  - family-names: Melo Chabot
+    given-names: Nicolás 
+  - family-names: de Almeida Calazans
+    given-names: Raquel Inez 
+  - family-names: Lion Guimarães Rodrigues
+    given-names: Vítor 
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: de Nardim
+    given-names: Luciana
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Vieira Carneiro
+    given-names: Rommel
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Alves Nogueira
+    given-names: Simone
+keywords:
+  - Controle
+  - Glicose
+repository-code: https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2021-1-ti1-7946100-glicemiaglicetec
+license: CC-BY-4.0
+version: 1.0.0
+date-released: 2021-06-20
